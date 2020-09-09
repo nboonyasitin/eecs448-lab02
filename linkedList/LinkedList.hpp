@@ -33,7 +33,7 @@ int LinkedList<T>::size() const
 		Fix this method
 	*/
 	return(m_size);
-	
+
 	return(0);
 }
 
@@ -108,6 +108,18 @@ bool LinkedList<T>::removeBack()
 	/** TODO 
 		Fix this method
 	*/
+	Node<T>* tempNode = m_front;
+	for(int i = 1; i < m_size; i++)
+	{
+		if(i == m_size-1)
+		{
+			delete tempNode->getNext();
+			tempNode->setNext(nullptr);
+			tempNode = secondintoLast;
+		}
+		tempNode = tempNode->getNext();
+		tempNode = lastNode;
+	}
 
 	return(isRemoved);
 }	
